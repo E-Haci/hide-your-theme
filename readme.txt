@@ -4,7 +4,7 @@ Donate link: http://guaven.com/donate
 Tags: change theme name, change theme's name, hide my theme, hide theme, hide theme name, hide your theme, protect theme, theme detector, theme detectors, theme hider, theme name changer
 Requires at least: 3.9.0
 Tested up to: 4.5.0
-Stable tag: 1.0.0
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -63,5 +63,9 @@ Your votes really helps us. Thanks.
 
 == Changelog ==
 
+= 1.0.2=
+* Small bug fixes in compression feature
+
 = 1.0.0=
 * Uploaded to Wordpress.org
+

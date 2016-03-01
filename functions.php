@@ -189,8 +189,7 @@ function guaven_pnh_minify_html($input) {
             '#<(img|input)(>| .*?>)<\/\1>#s', // reset previous fix
             '#(&nbsp;)&nbsp;(?![<\s])#', // clean up ...
             '#(?<=\>)(&nbsp;)(?=\<)#', // --ibid
-            // Remove HTML comment(s) except IE comment(s)
-            '#\s*<!--(?!\[if\s).*?-->\s*|(?<!\>)\n+(?=\<[^!])#s'
+            
         ),
         array(
             '<$1$2</$1>',
@@ -202,7 +201,7 @@ function guaven_pnh_minify_html($input) {
             '<$1$2',
             '$1 ',
             '$1',
-            ""
+        
         ),
     $input);
 }
@@ -225,7 +224,7 @@ function guaven_pnh_minify_css($input) {
             // Replace `0.6` with `.6`, but only when preceded by `:`, `,`, `-` or a white-space
             '#(?<=[\s:,\-])0+\.(\d+)#s',
             // Minify string value
-            '#(\/\*(?>.*?\*\/))|(?<!content\:)([\'"])([a-z_][a-z0-9\-_]*?)\2(?=[\s\{\}\];,])#si',
+            
             '#(\/\*(?>.*?\*\/))|(\burl\()([\'"])([^\s]+?)\3(\))#si',
             // Minify HEX color code
             '#(?<=[\s:,\-]\#)([a-f0-6]+)\1([a-f0-6]+)\2([a-f0-6]+)\3#i',
@@ -241,7 +240,7 @@ function guaven_pnh_minify_css($input) {
             ':0',
             '$1:0 0',
             '.$1',
-            '$1$3',
+            
             '$1$2$4$5',
             '$1$2$3',
             '$1:0',
