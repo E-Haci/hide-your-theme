@@ -63,9 +63,21 @@ function guaven_pnh_callback($buffer) {
 
     if (get_option('guaven_pnh_strip')!='')    $buffer=preg_replace('/<!--(.|\\s)*?-->/', '', $buffer);
     if(get_option('guaven_pnh_compress')!='') { 
-        $buffer=guaven_pnh_minify_html($buffer);
-         $buffer=guaven_pnh_minify_css($buffer);
-          $buffer=guaven_pnh_minify_js($buffer);
+        
+
+$doc = new DOMDocument();
+@$doc->loadHTML($buffer);
+$xmtags = $doc->getElementsByTagName('script');
+foreach ($xmtags as $xmtag) {
+    $buffer=str_replace($xmtag->nodeValue, guaven_pnh_minify_js($xmtag->nodeValue),$buffer);     
+}
+$xmtags = $doc->getElementsByTagName('style');
+foreach ($xmtags as $xmtag) {
+    $buffer=str_replace($xmtag->nodeValue, guaven_pnh_minify_css($xmtag->nodeValue),$buffer);     
+}
+
+$buffer=guaven_pnh_minify_html($buffer);
+
          }
 
     $info_about_pseudo = guaven_pnh_real_and_pseudo();
@@ -181,7 +193,8 @@ function guaven_pnh_minify_html($input) {
             // Keep important white-space(s) after self-closing HTML tag(s)
             '#<(img|input)(>| .*?>)#s',
             // Remove a line break and two or more white-space(s) between tag(s)
-            '#(<!--.*?-->)|(>)(?:\n*|\s{2,})(<)|^\s*|\s*$#s',
+            '/\s{2,}/',
+            '/[\t\n]/',
             '#(<!--.*?-->)|(?<!\>)\s+(<\/.*?>)|(<[^\/]*?>)\s+(?!\<)#s', // t+c || o+t
             '#(<!--.*?-->)|(<[^\/]*?>)\s+(<[^\/]*?>)|(<\/.*?>)\s+(<\/.*?>)#s', // o+o || c+c
             '#(<!--.*?-->)|(<\/.*?>)\s+(\s)(?!\<)|(?<!\>)\s+(\s)(<[^\/]*?\/?>)|(<[^\/]*?\/?>)\s+(\s)(?!\<)#s', // c+t || t+o || o+t -- separated by long white-space(s)
@@ -193,7 +206,8 @@ function guaven_pnh_minify_html($input) {
         ),
         array(
             '<$1$2</$1>',
-            '$1$2$3',
+           ' ',
+            ' ',
             '$1$2$3',
             '$1$2$3$4$5',
             '$1$2$3$4$5$6$7',

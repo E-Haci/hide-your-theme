@@ -1,10 +1,10 @@
 === Hide Your Theme Name ===
-Contributors: Elvin Haci
+Contributors: elvinhaci
 Donate link: http://guaven.com/donate
 Tags: change theme name, change theme's name, hide my theme, hide theme, hide theme name, hide your theme, protect theme, theme detector, theme detectors, theme hider, theme name changer
 Requires at least: 3.9.0
 Tested up to: 4.5.0
-Stable tag: 1.0.3
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,8 +21,10 @@ You can also strip html comments from source code and to compress output html
 
 
 = Warning =
-<b>If you meet any problem after installing, please don't panic, just uninstall the plugin and it will be ok. No any data loss will happen. But if you can't even access wp-admin, then just remove the plugin via ftp, then open wp-admin->settings->permalinks, press to "Save changes" button. Then write to our support email.
-No any data or settings lost will happen.</b>
+<b>If you meet any problem after installing, please don't panic, just uninstall the plugin and it will be ok. No any data lost will happen. 
+But if you can't even access wp-admin, then just remove the plugin via ftp, then open wp-admin->settings->permalinks, press to "Save changes" button. Then write to our support email.
+No any data or settings lost will happen.
+</b>
 
 
 = Website =
@@ -63,7 +65,12 @@ Your votes really helps us. Thanks.
 
 == Changelog ==
 
-= 1.0.2=
+
+= 1.0.5=
+* Impoved compression feature and 
+* Small bug fix in compression process.
+
+= 1.0.3=
 * Small bug fixes in compression feature
 
 = 1.0.0=

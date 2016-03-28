@@ -3,7 +3,7 @@
  * Plugin Name:       Hide Your Theme Name
  * Plugin URI:        http://guaven.com/product_name_hider
  * Description:       WP detectors will not be able to detect which theme your website are using.
- * Version:           1.0.3
+ * Version:           1.0.5
  * Author:            Guaven Labs
  * Author URI:        http://guaven.com/
  * Text Domain:       guaven_product_name_hider

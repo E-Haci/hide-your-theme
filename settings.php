@@ -5,8 +5,8 @@ function guaven_pnh_settings()
   
 if (isset($_POST['guaven_pnh_nonce_f']) and wp_verify_nonce($_POST['guaven_pnh_nonce_f'],'guaven_pnh_nonce')) {
 
-	$settings_result=guaven_pnh_make_uncommented_css();
-	settings_errors();
+    $settings_result=guaven_pnh_make_uncommented_css();
+    settings_errors();
     flush_rewrite_rules();
 }
     
@@ -39,7 +39,7 @@ if (isset($_POST['guaven_pnh_nonce_f']) and wp_verify_nonce($_POST['guaven_pnh_n
     if(get_option("guaven_pnh_compress")!='') echo 'checked'; ?> > Compress output to make your website a litle faster
 </p>
 <p>
-	<i>This feature removes all whitespaces, linebreaks from your output source code and stript all comments except IE conditional tags.</i>
+    <i>This feature removes all whitespaces, linebreaks from your output source code and stript all comments except IE conditional tags.</i>
 </p>
     </td>
 </tr>
@@ -53,7 +53,7 @@ if (isset($_POST['guaven_pnh_nonce_f']) and wp_verify_nonce($_POST['guaven_pnh_n
     if(get_option("guaven_pnh_strip")!='') echo 'checked'; ?> > Strip HTML  all comments from source code
 </p>
 <p>
-	<i>Some comments may contain your theme name.</i>
+    <i>Some comments may contain your theme name.</i>
 </p>
     </td>
 </tr>
@@ -65,10 +65,37 @@ if (isset($_POST['guaven_pnh_nonce_f']) and wp_verify_nonce($_POST['guaven_pnh_n
 <input type="hidden" name="guaven_settings" value="1">
 <input type="submit" class="button button-primary" value="Save changes">
 
+<hr>
 
-<p><br>If you have any problem about using the plugin or you can not get
- the needed result, 
-don't worry, just email us via support@guaven.com, we will be glad to help you</p>
+<p>
+<br><br>
+<small>
+It is nearly impossible that after installing and activating the plugin something will go wrong in 
+your website. But anyway, if some problem happens, just deactivate the plugin and contact 
+us(support@guaven.com).  <br>
+
+If you don’t want to wait support respond, then just do these steps:  <br>
+1. Deactivate or delete the plugin. And check your website. If it is ok, that’s all, but if 
+problem still exists go to next step. <br>
+2. Remove .htaccess file from your home folder. <br>
+3. Go to wp­admin­>settings­>permalink and just click to click Save Settings button to 
+regenerate .htaccess. 
+
+</small>
+</p>
+
+<hr>
+<p>
+<br><br>
+Make any donation to support our free plugins :) <br>
+<small>Donation is provided via ruble currency (350 rubles ~ 5$) <a target="_blank" href="https://www.google.com/search?q=350+rubles+to+usd&oq=350+rubles&aqs=chrome.0.69i59j69i57.1730j0j1&sourceid=chrome&ie=UTF-8#q=350+rubles+to+usd">Check Google for exact currency for today </a></small>
+
+</p>
+
+<p>
+<a href="https://money.yandex.ru/to/410011747184373" target="_blank" rel="attachment wp-att-47">
+<img class="alignnone size-medium wp-image-47" src="http://guaven.com/myfiles/uploads/2016/02/md-300x100.png" alt="md" width="150" height="50" ></a></p>
+</p>
 </form>
 </div>
 
